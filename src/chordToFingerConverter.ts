@@ -1,4 +1,4 @@
-import { ChordDefine } from './chordDetail';
+import { ChordDefine } from './chordDefine';
 
 export interface ChordFinger{
   finger: number;

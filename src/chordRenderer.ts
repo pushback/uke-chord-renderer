@@ -1,5 +1,5 @@
 import { registerWindow, Svg, SVG } from '@svgdotjs/svg.js';
-import { ChordDefine } from './chordDetail';
+import { ChordDefine } from './chordDefine';
 import { ChordFinger, ChordToFingerConverter } from './chordToFingerConverter';
 const { createSVGWindow } = require('svgdom');
 

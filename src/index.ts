@@ -1,5 +1,5 @@
 import { argv } from 'node:process';
-import { ChordDefine } from './chordDetail';
+import { ChordDefine } from './chordDefine';
 import { Renderer } from './chordRenderer';
 
 const chord = argv[2];
