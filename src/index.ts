@@ -4,7 +4,20 @@ import { CHRORD_LISTS } from './chordLists';
 import { Renderer } from './chordRenderer';
 
 const option = argv[2];
-if (option === '--all') {
+if (option !== '--all') {
+  // output single chord by svg string for redirect to file.
+  // npm run build; node ./lib/index.js Cm > ./dist/Cm.svg
+  Object.entries(CHRORD_LISTS).forEach(
+    entry => {
+      const [, chordList] = entry;
+      const chordDetail = chordList.find(chord => chord.name.toLocaleLowerCase() === option.toLowerCase());
+
+      if (chordDetail !== undefined) {
+        console.log(Renderer.getSVG(chordDetail));
+      }
+    }
+  );
+} else {
   // output all chord by *.svg to dist folder.
   const exitIfError: NoParamCallback = (err) => {
     if (err) {
@@ -12,12 +25,14 @@ if (option === '--all') {
       process.exit(1);
     }
   };
-  CHRORD_LISTS.forEach(
-    chord => {
+  Object.entries(CHRORD_LISTS).forEach(entry => {
+    const [, chordList] = entry;
+    chordList.forEach(chord => {
       const svg = Renderer.getSVG(chord);
       writeFile(`dist/${chord.name}.svg`, svg, exitIfError);
-    }
-  );
+    });
+  });
+
   // output preview html to dist folder.
   const previewHtml = `
   <html>
@@ -26,6 +41,10 @@ if (option === '--all') {
       <style type="text/css">
         body {
           padding: 2em;
+        }
+        h2 {
+          border: 1px solid #000;
+          border-width: 0 0 1px 0;
         }
         .flex-box {
           display: flex;
@@ -39,25 +58,22 @@ if (option === '--all') {
     <head>
     <body>
       <h1>uke-chord-renderer output preview</h1>
-      <div class="flex-box">
-        ${CHRORD_LISTS.map(chord => `
-        <div>
-          <h2>${chord.name}<h2>
-          <img src="${encodeURIComponent(chord.name)}.svg">
+      ${Object.entries(CHRORD_LISTS).map(entry => {
+        const [listName, chordList] = entry;
+        return `
+        <h2>${listName}</h2>
+        <div class="flex-box">
+          ${chordList.map(chord => `
+          <div>
+            <h3>${chord.name}<h3>
+            <img src="${encodeURIComponent(chord.name)}.svg" alt="${chord.name}">
+          </div>
+          `).join('\n')}
         </div>
-        `).join('\n')}
-      </div>
+        `;
+      }).join('\n')}
     </body>
   </html>
   `;
   writeFile('dist/preview.html', previewHtml, exitIfError);
-} else {
-  // output single chord by svg string for redirect to file.
-  // npm run build; node ./lib/index.js Cm > ./dist/Cm.svg
-  const chordDetail = CHRORD_LISTS.find(
-    chord => chord.name.toLocaleLowerCase() === option.toLowerCase()
-  );
-  if (chordDetail !== undefined) {
-    console.log(Renderer.getSVG(chordDetail));
-  }
 }

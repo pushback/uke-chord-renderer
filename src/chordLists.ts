@@ -1,4 +1,3 @@
-import { ChordDefine } from './chordDefine';
 import { CHRORD_LISTS_C } from './chordLists/00_C';
 import { CHRORD_LISTS_CS_DF } from './chordLists/01_C#Db';
 import { CHRORD_LISTS_B } from './chordLists/11_B';
@@ -12,17 +11,17 @@ import { CHRORD_LISTS_GS_AF } from './chordLists/08_G#Ab';
 import { CHRORD_LISTS_A } from './chordLists/09_A';
 import { CHRORD_LISTS_AS_BF } from './chordLists/10_A#Bb';
 
-export const CHRORD_LISTS: ChordDefine[] = [
-  ...CHRORD_LISTS_C,
-  ...CHRORD_LISTS_CS_DF,
-  ...CHRORD_LISTS_D,
-  ...CHRORD_LISTS_DS_EF,
-  ...CHRORD_LISTS_E,
-  ...CHRORD_LISTS_F,
-  ...CHRORD_LISTS_FS_GF,
-  ...CHRORD_LISTS_G,
-  ...CHRORD_LISTS_GS_AF,
-  ...CHRORD_LISTS_A,
-  ...CHRORD_LISTS_AS_BF,
-  ...CHRORD_LISTS_B
-];
+export const CHRORD_LISTS = {
+  C: CHRORD_LISTS_C,
+  'C#/Db': CHRORD_LISTS_CS_DF,
+  D: CHRORD_LISTS_D,
+  'D#/Eb': CHRORD_LISTS_DS_EF,
+  E: CHRORD_LISTS_E,
+  F: CHRORD_LISTS_F,
+  'F#/Gb': CHRORD_LISTS_FS_GF,
+  G: CHRORD_LISTS_G,
+  'G#/Ab': CHRORD_LISTS_GS_AF,
+  A: CHRORD_LISTS_A,
+  'A#/Bb': CHRORD_LISTS_AS_BF,
+  B: CHRORD_LISTS_B
+};
