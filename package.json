@@ -17,13 +17,14 @@
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
-    "ts-node": "^10.4.0"
+    "rimraf": "^3.0.2"
   },
   "scripts": {
+    "prestart": "mkdir -p ./dist",
     "start": "npm run build; node ./lib/index.js --all",
-    "sample": "npm run build; node ./lib/index.js c > ./dist/sampleC.svg",
-    "watch": "npm run build:live",
+    "sample": "npm run build; node ./lib/index.js Cm > ./dist/Cm.svg",
     "build": "tsc -p .",
+    "clean": "rimraf ./lib ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.ts"
   },
