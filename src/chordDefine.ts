@@ -1,5 +1,5 @@
 export interface ChordDefine {
-  name?: string;
+  name: string;
   flets: (number | number[])[];
   fingers: (number | number[])[];
 }

@@ -22,8 +22,8 @@
     "ts-node": "^10.4.0"
   },
   "scripts": {
-    "start": "npm run build; node ./lib/index.js",
-    "sample": "npm run build; node ./lib/index.js c > ./dist/sample.svg",
+    "start": "npm run build; node ./lib/index.js c > ./dist/sample.svg",
+    "generate": "npm run build; node ./lib/index.js --all",
     "watch": "npm run build:live",
     "build": "tsc -p .",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
