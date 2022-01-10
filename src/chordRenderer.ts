@@ -4,17 +4,17 @@ import { ChordFinger, ChordToFingerConverter } from './chordToFingerConverter';
 const { createSVGWindow } = require('svgdom');
 
 export class Renderer {
-  static readonly CANVAS_W = 150;
-  static readonly CANVAS_H = 100;
-  static readonly OFFSET_X = 25;
-  static readonly OFFSET_Y = 25;
-  static readonly FIG_W = 100;
-  static readonly FIG_H = 50;
   static readonly STRINGS_NUMBER = 4;
   static readonly FLET_NUMBER = 5;
+  static readonly CANVAS_W = 128;
+  static readonly CANVAS_H = Renderer.CANVAS_W * (Renderer.STRINGS_NUMBER - 1) / Renderer.FLET_NUMBER;
+  static readonly OFFSET_X = 8;
+  static readonly OFFSET_Y = 8;
+  static readonly FIG_W = Renderer.CANVAS_W - Renderer.OFFSET_X * 2;
+  static readonly FIG_H = Renderer.CANVAS_H - Renderer.OFFSET_Y * 2;
   static readonly STROKE_THIN = 1;
   static readonly STROKE_BOLD = 5;
-  static readonly FINGER_RADIUS = 5;
+  static readonly FINGER_RADIUS = 7;
   static readonly FONT_SIZE = Math.ceil(Renderer.FINGER_RADIUS * 1.75);
 
   static getSVG (chord: ChordDefine) {
@@ -75,7 +75,7 @@ export class Renderer {
       .font({ fill: '#fff', family: 'monospace', size: Renderer.FONT_SIZE });
     const bbox = text.bbox();
     text
-      .move(x - bbox.width / 2, y2 - bbox.height / 2)
+      .move(x - Math.floor(bbox.width / 2), y2 - Math.ceil(bbox.height / 2))
       .dmove(Renderer.OFFSET_X, Renderer.OFFSET_Y);
   }
 }
