@@ -1,0 +1,36 @@
+{
+  "name": "uke-chord-renderer",
+  "version": "1.0.0",
+  "description": "Ukulele chord renderer.",
+  "main": "index.js",
+  "dependencies": {
+    "typescript": "^4.5.4",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.8",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/pushback/uke-chord-renderer.git",
+  "keywords": [],
+  "author": "JhonSmith <jhonsmithworks@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pushback/uke-chord-renderer/issues"
+  },
+  "homepage": "https://github.com/pushback/uke-chord-renderer#readme"
+}
