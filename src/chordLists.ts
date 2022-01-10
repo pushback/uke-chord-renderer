@@ -17,7 +17,7 @@ export const CHRORD_LISTS: ChordDefine[] = [
     fingers: [1, 0, 0, 0]
   },
   {
-    name: 'CM7',
+    name: 'Cmaj7',
     flets: [2, 0, 0, 0],
     fingers: [2, 0, 0, 0]
   },
@@ -42,7 +42,7 @@ export const CHRORD_LISTS: ChordDefine[] = [
     fingers: [1, 0, 2, 0]
   },
   {
-    name: 'Cm7-5',
+    name: 'Cm7b5',
     flets: [3, 2, 3, 3],
     fingers: [4, 1, 3, 2]
   },
@@ -50,5 +50,20 @@ export const CHRORD_LISTS: ChordDefine[] = [
     name: 'Caug',
     flets: [3, 0, 0, 1],
     fingers: [3, 0, 0, 1]
+  },
+  {
+    name: 'Cdim',
+    flets: [3, 2, 3, 2],
+    fingers: [4, 2, 3, 1]
+  },
+  {
+    name: 'Csus4',
+    flets: [3, 1, 0, 0],
+    fingers: [2, 1, 0, 0]
+  },
+  {
+    name: 'C7sus4',
+    flets: [1, 1, 0, 0],
+    fingers: [2, 1, 0, 0]
   }
 ];
