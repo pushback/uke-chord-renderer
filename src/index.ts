@@ -76,4 +76,8 @@ if (option !== '--all') {
   </html>
   `;
   writeFile('dist/preview.html', previewHtml, exitIfError);
+
+  // print success messsage.
+  console.log('Finish output chord.svg and preview.html to ./dist/ folder.');
+  console.log('Check it!');
 }
