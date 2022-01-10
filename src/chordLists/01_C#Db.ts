@@ -1,6 +1,6 @@
 import { ChordDefine } from '../chordDefine';
 
-export const CHRORD_LISTS_CS_DF: ChordDefine[] = [
+export const CHORD_LISTS_CS_DF: ChordDefine[] = [
   // ---------------------------------
   // C#/Db
   // ---------------------------------

@@ -1,7 +1,7 @@
 import { ChordDefine } from '../chordDefine';
 
 // TODO: define chord
-export const CHRORD_LISTS_F: ChordDefine[] = [
+export const CHORD_LISTS_F: ChordDefine[] = [
   // ---------------------------------
   // F
   // ---------------------------------

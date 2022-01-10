@@ -1,6 +1,6 @@
 import { ChordDefine } from '../chordDefine';
 
-export const CHRORD_LISTS_DS_EF: ChordDefine[] = [
+export const CHORD_LISTS_DS_EF: ChordDefine[] = [
   // ---------------------------------
   // D#/Eb
   // ---------------------------------

@@ -1,6 +1,6 @@
 import { ChordDefine } from '../chordDefine';
 
-export const CHRORD_LISTS_D: ChordDefine[] = [
+export const CHORD_LISTS_D: ChordDefine[] = [
   // ---------------------------------
   // D
   // ---------------------------------
