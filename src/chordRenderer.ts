@@ -4,6 +4,7 @@ import { ChordFinger, ChordToFingerConverter } from './chordToFingerConverter';
 const { createSVGWindow } = require('svgdom');
 
 export class Renderer {
+  // TODO: support setting overwrite by args.
   static readonly STRINGS_NUMBER = 4;
   static readonly FLET_NUMBER = 5;
   static readonly CANVAS_W = 128;
@@ -18,7 +19,7 @@ export class Renderer {
   static readonly FONT_SIZE = Math.ceil(Renderer.FINGER_RADIUS * 1.75);
 
   static getSVG (chord: ChordDefine) {
-  // setup
+    // setup
     const window = createSVGWindow();
     const document = window.document;
     registerWindow(window, document);

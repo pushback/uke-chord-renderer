@@ -1,5 +1,6 @@
 import { ChordDefine } from '../chordDefine';
 
+// TODO: define chord
 export const CHRORD_LISTS_GS_AF: ChordDefine[] = [
   // ---------------------------------
   // G#/Ab

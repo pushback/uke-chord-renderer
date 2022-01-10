@@ -4,7 +4,9 @@ import { CHRORD_LISTS } from './chordLists';
 import { Renderer } from './chordRenderer';
 
 const option = argv[2];
+// TODO: [LOW PRIORITY]add option for custom chord to svg.
 if (option !== '--all') {
+  // TODO: split function
   // output single chord by svg string for redirect to file.
   // npm run build; node ./lib/index.js Cm > ./dist/Cm.svg
   Object.entries(CHRORD_LISTS).forEach(
@@ -18,6 +20,7 @@ if (option !== '--all') {
     }
   );
 } else {
+  // TODO: split function
   // output all chord by *.svg to dist folder.
   const exitIfError: NoParamCallback = (err) => {
     if (err) {
