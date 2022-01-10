@@ -21,13 +21,32 @@ if (option === '--all') {
   // output preview html to dist folder.
   const previewHtml = `
   <html>
-    <head><title>uke-chord-renderer output preview</title><head>
+    <head>
+      <title>uke-chord-renderer output preview</title>
+      <style type="text/css">
+        body {
+          padding: 2em;
+        }
+        .flex-box {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .flex-box > div {
+          max-width: 20%;
+          min-width: 150px;
+        }
+      </style>
+    <head>
     <body>
       <h1>uke-chord-renderer output preview</h1>
-      ${CHRORD_LISTS.map(chord => `
-        <h2>${chord.name}<h2>
-        <div><image src="${chord.name}.svg"></div>
-      `).join('\n')}
+      <div class="flex-box">
+        ${CHRORD_LISTS.map(chord => `
+        <div>
+          <h2>${chord.name}<h2>
+          <img src="${encodeURIComponent(chord.name)}.svg">
+        </div>
+        `).join('\n')}
+      </div>
     </body>
   </html>
   `;
