@@ -1,73 +1,72 @@
 import { ChordDefine } from '../chordDefine';
 
-// TODO: define chord
 export const CHORD_LISTS_GS_AF: ChordDefine[] = [
   // ---------------------------------
   // G#/Ab
   // ---------------------------------
   {
     name: 'G#',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [3, [3, 4], 3, [3, 5]],
+    fingers: [1, [1, 2], 1, [1, 3]]
   },
   {
     name: 'G#m',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [2, 4, 3, 1],
+    fingers: [2, 4, 3, 1]
   },
   {
     name: 'G#7',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [3, 2, 3, 1],
+    fingers: [4, 2, 3, 1]
   },
   {
     name: 'G#maj7',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [3, 3, 3, 1],
+    fingers: [4, 3, 2, 1]
   },
   {
     name: 'G#m7',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [2, 2, 3, 1],
+    fingers: [3, 2, 4, 1]
   },
   {
     name: 'G#6',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [3, 1, 3, 1],
+    fingers: [4, 2, 3, 1]
   },
   {
     name: 'G#m6',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [2, 1, 3, 1],
+    fingers: [3, 2, 4, 1]
   },
   {
     name: 'G#9',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [3, 2, 3, 3],
+    fingers: [4, 1, 3, 2]
   },
   {
     name: 'G#m7b5',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [2, 2, 2, 1],
+    fingers: [4, 3, 2, 1]
   },
   {
     name: 'G#aug',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [3, 0, 0, 1],
+    fingers: [3, 0, 0, 1]
   },
   {
     name: 'G#dim',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [2, 1, 2, 1],
+    fingers: [4, 2, 3, 1]
   },
   {
     name: 'G#sus4',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [[1, 3, 4], [1, 3, 4], [1, 3], 1],
+    fingers: [[1, 3, 4], [1, 3, 4], [1, 3], 1]
   },
   {
     name: 'G#7sus4',
-    flets: [0, 0, 0, 0],
-    fingers: [0, 0, 0, 0]
+    flets: [4, 2, 3, 1],
+    fingers: [4, 2, 3, 1]
   }
 ];
