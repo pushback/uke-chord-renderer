@@ -1,21 +1,28 @@
 import { NoParamCallback, writeFile } from 'node:fs';
 import { argv } from 'node:process';
 import { CHORD_LISTS } from './chordLists';
+import { ChordOption } from './chordOption';
 import { Renderer } from './chordRenderer';
 
-const option = argv[2];
+const option: ChordOption = {
+  allChordOutput: argv[2] !== '--all',
+  vertical: argv[3] === '--vertical',
+  chordName: argv.reverse()[0]
+};
 // TODO: [LOW PRIORITY]add option for custom chord to svg.
-if (option !== '--all') {
+if (option.allChordOutput) {
   // TODO: split function
   // output single chord by svg string for redirect to file.
   // npm run build; node ./lib/index.js Cm > ./dist/Cm.svg
   Object.entries(CHORD_LISTS).forEach(
     entry => {
       const [, chordList] = entry;
-      const chordDetail = chordList.find(chord => chord.name.toLocaleLowerCase() === option.toLowerCase());
+      const chordDetail = chordList.find(
+        chord => chord.name.toLocaleLowerCase() === option.chordName.toLowerCase()
+      );
 
       if (chordDetail !== undefined) {
-        console.log(Renderer.getSVG(chordDetail));
+        console.log(Renderer.getSVG(chordDetail, option));
       }
     }
   );
@@ -31,7 +38,7 @@ if (option !== '--all') {
   Object.entries(CHORD_LISTS).forEach(entry => {
     const [, chordList] = entry;
     chordList.forEach(chord => {
-      const svg = Renderer.getSVG(chord);
+      const svg = Renderer.getSVG(chord, option);
       writeFile(`dist/${chord.name}.svg`, svg, exitIfError);
     });
   });

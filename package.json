@@ -22,6 +22,7 @@
   "scripts": {
     "prestart": "mkdir -p ./dist",
     "start": "npm run build; node ./lib/index.js --all",
+    "start:vertical": "npm run build; node ./lib/index.js --all --vertical",
     "sample": "npm run build; node ./lib/index.js Cm > ./dist/Cm.svg",
     "build": "tsc -p .",
     "clean": "rimraf ./lib ./dist",
