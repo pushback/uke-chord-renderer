@@ -12,6 +12,7 @@
     "@types/node": "^17.0.8",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
+    "commander": "^8.3.0",
     "eslint": "^7.32.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.25.4",
@@ -20,9 +21,10 @@
     "rimraf": "^3.0.2"
   },
   "scripts": {
-    "start": "npm run build && node ./lib/index.js --all",
-    "start:vertical": "npm run build && node ./lib/index.js --all --vertical",
-    "sample": "npm run build && node ./lib/index.js Cm > ./dist/Cm.svg",
+    "all": "node ./lib/index.js --all",
+    "all:vertical": "node ./lib/index.js --all --vertical",
+    "single": "node ./lib/index.js",
+    "single:vertical": "node ./lib/index.js --vertical",
     "build": "npm run clean && mkdir -p ./dist && tsc -p .",
     "clean": "rimraf ./lib ./dist",
     "test": "echo \"Error: no test specified\" && exit 1",

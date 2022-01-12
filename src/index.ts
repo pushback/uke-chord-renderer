@@ -1,33 +1,60 @@
 import { NoParamCallback, writeFile } from 'node:fs';
-import { argv } from 'node:process';
 import { CHORD_LISTS } from './chordLists';
-import { ChordOption } from './chordOption';
-import { Renderer } from './chordRenderer';
+import { ChordRenderer } from './chordRenderer';
+import { Command, OptionValues } from 'commander';
+import { ChordDefaultOptions } from './chordDefaultOptions';
 
-const option: ChordOption = {
-  allChordOutput: argv[2] !== '--all',
-  vertical: argv[3] === '--vertical',
-  chordName: argv.reverse()[0]
-};
 // TODO: [LOW PRIORITY]add option for custom chord to svg.
-if (option.allChordOutput) {
-  // TODO: split function
+const program = new Command();
+program
+  .option('-a, --all', 'output all chord to svg, js, preview.html to ./dist folder')
+  .option('-v, --vertical', 'rotete chord image to vertical')
+  .option('--canvasw <px>', 'canvas width', ChordDefaultOptions.canvasw)
+  .option('--canvash <px>', 'canvas height', ChordDefaultOptions.canvash)
+  .option('--figw <px>', 'figure width', ChordDefaultOptions.figw)
+  .option('--figh <px>', 'figure height', ChordDefaultOptions.figh)
+  .option('--offsetx <px>', 'figure offset x', ChordDefaultOptions.offsetx)
+  .option('--offsety <px>', 'figure offset y', ChordDefaultOptions.offsety)
+  .option('--strokethin <px>', 'flets stroke thin width', ChordDefaultOptions.strokethin)
+  .option('--strokebold <px>', 'flets stroke bold width', ChordDefaultOptions.strokebold)
+  .option('--strokecolor <color>', 'flets stroke color. #RRGGBB[AA]', ChordDefaultOptions.strokecolor)
+  .option('--fingerradius <px>', 'finger stroke radius', ChordDefaultOptions.fingerradius)
+  .option('--fingercolor <color>', 'finger stroke color. #RRGGBB[AA]', ChordDefaultOptions.fingercolor)
+  .option('--fontsize <px>', 'finger number font size', ChordDefaultOptions.fontsize)
+  .option('--fontcolor <color>"', 'finger number font color. #RRGGBB[AA]', ChordDefaultOptions.fontcolor)
+  .argument('[chord]', 'Chord string("Cm", "Dsus",...)')
+  .action((name, options, command) => {
+    const opts = {
+      ...options,
+      chord: name
+    };
+    if (opts.chord) {
+      singleOutput(opts);
+    } else if (opts.all) {
+      allOutput(opts);
+    } else {
+      program.help();
+    }
+  })
+  .parse();
+
+function singleOutput (options: OptionValues) {
   // output single chord by svg string for redirect to file.
   // npm run build; node ./lib/index.js Cm > ./dist/Cm.svg
   Object.entries(CHORD_LISTS).forEach(
     entry => {
       const [, chordList] = entry;
       const chordDetail = chordList.find(
-        chord => chord.name.toLocaleLowerCase() === option.chordName.toLowerCase()
+        chord => chord.name.toLocaleLowerCase() === options.chord.toLowerCase()
       );
 
       if (chordDetail !== undefined) {
-        console.log(Renderer.getSVG(chordDetail, option));
+        console.log(new ChordRenderer(options).getSVG(chordDetail));
       }
     }
   );
-} else {
-  // TODO: split function
+}
+function allOutput (options: OptionValues) {
   // output all chord by *.svg to dist folder.
   const exitIfError: NoParamCallback = (err) => {
     if (err) {
@@ -35,11 +62,11 @@ if (option.allChordOutput) {
       process.exit(1);
     }
   };
-  const jsBuffer: { chord : string, svg : string }[] = [];
+  const jsBuffer: { chord: string, svg: string }[] = [];
   Object.entries(CHORD_LISTS).forEach(entry => {
     const [, chordList] = entry;
     chordList.forEach(chord => {
-      const svg = Renderer.getSVG(chord, option);
+      const svg = new ChordRenderer(options).getSVG(chord);
       jsBuffer.push({
         chord: chord.name,
         svg
