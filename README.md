@@ -81,7 +81,7 @@ See `./src/chordLists/*.ts`.
     name: 'Cm',
     // Fret numbers for the 1st through 4th strings.
     // In the case of barre(ceja), multiple pressed strings are listed in an array
-    flets: [3, 3, 3, [3, 5]],
+    frets: [3, 3, 3, [3, 5]],
     // Finger numbers for the 1st through 4th strings.
     // In the case of ballet(Ceja), multiple pressed strings are listed in an array
     fingers: [1, 1, 1, [1, 3]]

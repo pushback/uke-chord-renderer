@@ -2,11 +2,11 @@ import { OptionValues } from 'commander';
 
 // default value
 const strings = 4;
-const flets = 5;
+const frets = 5;
 const offsetx = 8;
 const offsety = 8;
 const canvasw = 128;
-const canvash = canvasw * (strings - 1) / flets;
+const canvash = canvasw * (strings - 1) / frets;
 const figw = canvasw - offsetx * 2;
 const figh = canvash - offsety * 2;
 const strokethin = 1;
@@ -19,7 +19,7 @@ const fontcolor = '#fff';
 
 export const ChordDefaultOptions: OptionValues = {
   strings,
-  flets,
+  frets,
   canvasw,
   canvash,
   figw,

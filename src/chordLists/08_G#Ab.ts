@@ -6,67 +6,67 @@ export const CHORD_LISTS_GS_AF: ChordDefine[] = [
   // ---------------------------------
   {
     name: 'G#',
-    flets: [3, [3, 4], 3, [3, 5]],
+    frets: [3, [3, 4], 3, [3, 5]],
     fingers: [1, [1, 2], 1, [1, 3]]
   },
   {
     name: 'G#m',
-    flets: [2, 4, 3, 1],
+    frets: [2, 4, 3, 1],
     fingers: [2, 4, 3, 1]
   },
   {
     name: 'G#7',
-    flets: [3, 2, 3, 1],
+    frets: [3, 2, 3, 1],
     fingers: [4, 2, 3, 1]
   },
   {
     name: 'G#maj7',
-    flets: [3, 3, 3, 1],
+    frets: [3, 3, 3, 1],
     fingers: [4, 3, 2, 1]
   },
   {
     name: 'G#m7',
-    flets: [2, 2, 3, 1],
+    frets: [2, 2, 3, 1],
     fingers: [3, 2, 4, 1]
   },
   {
     name: 'G#6',
-    flets: [3, 1, 3, 1],
+    frets: [3, 1, 3, 1],
     fingers: [4, 2, 3, 1]
   },
   {
     name: 'G#m6',
-    flets: [2, 1, 3, 1],
+    frets: [2, 1, 3, 1],
     fingers: [3, 2, 4, 1]
   },
   {
     name: 'G#9',
-    flets: [3, 2, 3, 3],
+    frets: [3, 2, 3, 3],
     fingers: [4, 1, 3, 2]
   },
   {
     name: 'G#m7b5',
-    flets: [2, 2, 2, 1],
+    frets: [2, 2, 2, 1],
     fingers: [4, 3, 2, 1]
   },
   {
     name: 'G#aug',
-    flets: [3, 0, 0, 1],
+    frets: [3, 0, 0, 1],
     fingers: [3, 0, 0, 1]
   },
   {
     name: 'G#dim',
-    flets: [2, 1, 2, 1],
+    frets: [2, 1, 2, 1],
     fingers: [4, 2, 3, 1]
   },
   {
     name: 'G#sus4',
-    flets: [[1, 3, 4], [1, 3, 4], [1, 3], 1],
+    frets: [[1, 3, 4], [1, 3, 4], [1, 3], 1],
     fingers: [[1, 3, 4], [1, 3, 4], [1, 3], 1]
   },
   {
     name: 'G#7sus4',
-    flets: [4, 2, 3, 1],
+    frets: [4, 2, 3, 1],
     fingers: [4, 2, 3, 1]
   }
 ];

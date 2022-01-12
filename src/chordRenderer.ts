@@ -26,7 +26,7 @@ export class ChordRenderer {
     const canvas = SVG().size(this.options.canvasw, this.options.canvash);
     const group = canvas.group();
 
-    // draw string, flet
+    // draw string, fret
     group.add(this.drawBackGround());
 
     // draw finger position
@@ -53,8 +53,8 @@ export class ChordRenderer {
         .line(0, y, this.options.figw, y)
         .stroke({ color: '#000', linecap: 'square', width: this.options.strokethin });
     }
-    for (let i = 0; i < this.options.flets; i++) {
-      const x = (this.options.figw / this.options.flets) * i;
+    for (let i = 0; i < this.options.frets; i++) {
+      const x = (this.options.figw / this.options.frets) * i;
       const dx = i === 0 ? this.options.strokebold / 2 : 0;
       const dy = i === 0 ? this.options.strokethin / 2 : 0;
       const width = i === 0 ? this.options.strokebold : this.options.strokethin;
@@ -77,7 +77,7 @@ export class ChordRenderer {
 
   private drawFinger (finger: ChordFinger) {
     const group = new G();
-    const x = (this.options.figw / this.options.flets) * (finger.flet - 0.5);
+    const x = (this.options.figw / this.options.frets) * (finger.fret - 0.5);
     const y1 = (this.options.figh / (this.options.strings - 1)) * finger.strings;
     const y2 = (this.options.figh / (this.options.strings - 1)) * (finger.strings + finger.barre - 1);
     // draw finger line
