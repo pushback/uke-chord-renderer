@@ -35,13 +35,21 @@ if (option.allChordOutput) {
       process.exit(1);
     }
   };
+  const jsBuffer: { chord : string, svg : string }[] = [];
   Object.entries(CHORD_LISTS).forEach(entry => {
     const [, chordList] = entry;
     chordList.forEach(chord => {
       const svg = Renderer.getSVG(chord, option);
+      jsBuffer.push({
+        chord: chord.name,
+        svg
+      });
       writeFile(`dist/${chord.name}.svg`, svg, exitIfError);
     });
   });
+
+  // output js file
+  writeFile('dist/chord.js', `let CHORD_LISTS = ${JSON.stringify(jsBuffer, null, ' ')};`, exitIfError);
 
   // output preview html to dist folder.
   const previewHtml = `
