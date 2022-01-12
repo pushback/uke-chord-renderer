@@ -98,3 +98,10 @@ See `./src/chordLists/*.ts`.
 ### Rendering results
 
 ![Cm sample](https://user-images.githubusercontent.com/1241251/149176308-6dbc6ffa-df29-4720-9791-aa5c4e946115.png)
+
+
+## References
+
+- [ウクレレコード一覧表｜楽器.me](http://www.gakufu.gakki.me/code_u/)
+- [Ukulele Chords Diagrams & Ukulele Fretboard • UkuTabs](https://ukutabs.com/ukulele-chords-diagrams/)
+- [starenka/chordata: A dummy chordbook for mandolin, ukulele and guitar](https://github.com/starenka/chordata)
