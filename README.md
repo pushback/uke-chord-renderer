@@ -75,7 +75,7 @@ Open `./dist/preview.html` to see all chord image.
 
 See `./src/chordLists/*.ts`.
 
-```json
+```javascript
   {
     // name of chord
     name: 'Cm',
