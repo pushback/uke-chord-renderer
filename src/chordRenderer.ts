@@ -32,12 +32,19 @@ export class ChordRenderer {
     // draw finger position
     group.add(this.drawFingers(chord));
 
+    // adjust viewfrets
+    const maxFret = Math.max(...chord.frets.flat());
+    if (this.options.viewfrets < maxFret) {
+      const dx = (this.options.figw / this.options.frets) * (this.options.viewfrets - maxFret);
+      group.children().each(child => child.dmove(dx, 0));
+    }
+
     // rotate when vertical
     if (this.options.vertical) {
       canvas.size(this.options.canvash, this.options.canvasw);
       group
-        .center(this.options.canvash / 2, this.options.canvasw / 2)
-        .rotate(90);
+        .dmove(0, -this.options.canvash)
+        .rotate(90, 0, 0);
     }
 
     // return svg string
@@ -47,12 +54,15 @@ export class ChordRenderer {
   private drawBackGround () {
     const group = new G();
 
+    // draw strings
     for (let i = 0; i < this.options.strings; i++) {
       const y = (this.options.figh / (this.options.strings - 1)) * i;
       group
         .line(0, y, this.options.figw, y)
         .stroke({ color: '#000', linecap: 'square', width: this.options.strokethin });
     }
+
+    // draw frets
     for (let i = 0; i < this.options.frets; i++) {
       const x = (this.options.figw / this.options.frets) * i;
       const dx = i === 0 ? this.options.strokebold / 2 : 0;
@@ -61,6 +71,22 @@ export class ChordRenderer {
       group
         .line(x - dx, -dy, x - dx, this.options.figh + dy)
         .stroke({ color: this.options.strokecolor, width });
+    }
+
+    // draw fret number
+    for (let i = 1; i <= this.options.frets; i++) {
+      const x = (this.options.figw / this.options.frets) * (i - 0.5);
+      const y = this.options.figh / (this.options.strings - 1) * this.options.strings;
+      const text = group
+        .text(i + '')
+        .font({ fill: this.options.strokecolor, family: 'monospace', size: this.options.fontsize });
+      const bbox = text.bbox();
+      text.move(x - bbox.width / 2, y - bbox.height / 2);
+
+      // rotate when vertical
+      if (this.options.vertical) {
+        text.rotate(-90);
+      }
     }
 
     // slide offset
@@ -86,7 +112,6 @@ export class ChordRenderer {
       .stroke({ color: this.options.fingercolor, linecap: 'round', width: this.options.fingerradius * 2 });
     // draw finger number
     const text = group
-      .text(finger.finger + '')
       .text(finger.finger + '')
       .font({ fill: this.options.fontcolor, family: 'monospace', size: this.options.fontsize });
     const bbox = text.bbox();
