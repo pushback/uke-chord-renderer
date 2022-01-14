@@ -27,7 +27,7 @@ export const CHORD_LISTS_DS_EF: ChordDefine[] = [
   {
     name: 'Ebm7',
     frets: [4, 2, 3, 3],
-    fingers: [4, 1, 3, 2]
+    fingers: [3, 1, 2, 2]
   },
   {
     name: 'Eb6',
@@ -37,7 +37,7 @@ export const CHORD_LISTS_DS_EF: ChordDefine[] = [
   {
     name: 'Ebm6',
     frets: [3, 2, 3, 3],
-    fingers: [4, 1, 3, 2]
+    fingers: [3, 1, 2, 2]
   },
   {
     name: 'Eb9',
@@ -60,13 +60,18 @@ export const CHORD_LISTS_DS_EF: ChordDefine[] = [
     fingers: [4, 2, 3, 1]
   },
   {
+    name: 'Ebadd9',
+    frets: [[3, 6], 3, [3, 5], 3],
+    fingers: [[1, 4], 1, [1, 3], 1]
+  },
+  {
     name: 'Ebsus4',
     frets: [1, 4, 3, 3],
-    fingers: [1, 4, 3, 2]
+    fingers: [1, 3, 2, 2]
   },
   {
     name: 'Eb7sus4',
     frets: [[3, 4], [3, 4], 3, 3],
-    fingers: [[1, 3], [1, 2], 1, 1]
+    fingers: [[1, 2], [1, 2], 1, 1]
   }
 ];

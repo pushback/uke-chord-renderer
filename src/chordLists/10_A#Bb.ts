@@ -36,8 +36,8 @@ export const CHORD_LISTS_AS_BF: ChordDefine[] = [
   },
   {
     name: 'A#m6',
-    frets: [4, 3, 5, 3],
-    fingers: [3, 2, 4, 1]
+    frets: [1, 1, 1, 0],
+    fingers: [1, 1, 1, 0]
   },
   {
     name: 'A#9',
@@ -52,7 +52,7 @@ export const CHORD_LISTS_AS_BF: ChordDefine[] = [
   {
     name: 'A#aug',
     frets: [1, 2, 2, 3],
-    fingers: [1, 3, 2, 4]
+    fingers: [1, 2, 2, 3]
   },
   {
     name: 'A#dim',
@@ -60,9 +60,14 @@ export const CHORD_LISTS_AS_BF: ChordDefine[] = [
     fingers: [2, 0, 1, 0]
   },
   {
+    name: 'A#add9',
+    frets: [3, 1, 2, 3],
+    fingers: [4, 1, 2, 3]
+  },
+  {
     name: 'A#sus4',
     frets: [1, 1, 3, 3],
-    fingers: [1, 1, 3, 2]
+    fingers: [1, 1, 4, 3]
   },
   {
     name: 'A#7sus4',

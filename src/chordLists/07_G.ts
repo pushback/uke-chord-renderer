@@ -6,8 +6,8 @@ export const CHORD_LISTS_G: ChordDefine[] = [
   // ---------------------------------
   {
     name: 'G',
-    frets: [2, 3, 2, 0],
-    fingers: [3, 4, 2, 0]
+    frets: [2, [2, 3], 2, 0],
+    fingers: [1, [1, 2], 1, 0]
   },
   {
     name: 'Gm',
@@ -22,7 +22,7 @@ export const CHORD_LISTS_G: ChordDefine[] = [
   {
     name: 'Gmaj7',
     frets: [2, 2, 2, 0],
-    fingers: [3, 2, 1, 0]
+    fingers: [1, 1, 1, 0]
   },
   {
     name: 'Gm7',
@@ -32,7 +32,7 @@ export const CHORD_LISTS_G: ChordDefine[] = [
   {
     name: 'G6',
     frets: [2, 0, 2, 0],
-    fingers: [4, 0, 3, 0]
+    fingers: [2, 0, 1, 0]
   },
   {
     name: 'Gm6',
@@ -42,7 +42,7 @@ export const CHORD_LISTS_G: ChordDefine[] = [
   {
     name: 'G9',
     frets: [2, 1, 2, 2],
-    fingers: [4, 1, 3, 2]
+    fingers: [3, 1, 2, 2]
   },
   {
     name: 'Gm7b5',
@@ -60,9 +60,14 @@ export const CHORD_LISTS_G: ChordDefine[] = [
     fingers: [2, 0, 1, 0]
   },
   {
+    name: 'Gadd9',
+    frets: [2, [2, 3], 2, 2],
+    fingers: [1, [1, 2], 1, 1]
+  },
+  {
     name: 'Gsus4',
-    frets: [3, 3, 2, 0],
-    fingers: [3, 2, 1, 0]
+    frets: [[2, 3], [2, 3], 2, 0],
+    fingers: [[1, 2], [1, 2], 1, 0]
   },
   {
     name: 'G7sus4',

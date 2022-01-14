@@ -22,7 +22,7 @@ export const CHORD_LISTS_A: ChordDefine[] = [
   {
     name: 'Amaj7',
     frets: [0, 0, 1, 1],
-    fingers: [0, 0, 2, 1]
+    fingers: [0, 0, 1, 1]
   },
   {
     name: 'Am7',
@@ -31,13 +31,13 @@ export const CHORD_LISTS_A: ChordDefine[] = [
   },
   {
     name: 'A6',
-    frets: [4, 2, 4, 2],
-    fingers: [4, 2, 3, 1]
+    frets: [[2, 4], 2, [2, 4], 2],
+    fingers: [[2, 4], 2, [2, 3], 2]
   },
   {
     name: 'Am6',
-    frets: [3, 2, 4, 2],
-    fingers: [3, 2, 4, 1]
+    frets: [[2, 3], 2, [2, 4], 2],
+    fingers: [[1, 2], 1, [1, 3], 1]
   },
   {
     name: 'A9',
@@ -52,12 +52,17 @@ export const CHORD_LISTS_A: ChordDefine[] = [
   {
     name: 'Aaug',
     frets: [0, 1, 1, 2],
-    fingers: [0, 2, 1, 3]
+    fingers: [0, 1, 1, 2]
   },
   {
     name: 'Adim',
     frets: [3, 2, 3, 2],
     fingers: [4, 2, 3, 1]
+  },
+  {
+    name: 'Aadd9',
+    frets: [2, 0, 1, 2],
+    fingers: [3, 0, 1, 2]
   },
   {
     name: 'Asus4',
