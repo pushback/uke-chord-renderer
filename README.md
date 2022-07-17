@@ -16,6 +16,8 @@ Or vertical:
 
 Output the image with the following commands.
 
+### Setup
+
 ```bash
 # git clone
 git clone https://github.com/pushback/uke-chord-renderer.git
@@ -24,7 +26,10 @@ git clone https://github.com/pushback/uke-chord-renderer.git
 cd ./uke-chord-renderer
 yarn
 npm build
+```
+### Run
 
+```bash
 # Output all chord image to under ./dist folder
 # *.svg, chord.js, preview.html
 npm all
@@ -61,7 +66,7 @@ npm run single:vertical Cm > ./dist/Cm.svg
 </script>
 ```
 
-### Results of both
+### Rendering results of both
 
 ![HTML Sample](https://user-images.githubusercontent.com/1241251/149176308-6dbc6ffa-df29-4720-9791-aa5c4e946115.png)
 
@@ -74,6 +79,8 @@ Open `./dist/preview.html` to see all chord image.
 ## Inside chord data format
 
 See `./src/chordLists/*.ts`.
+
+### Definition
 
 ```javascript
   {
@@ -88,4 +95,13 @@ See `./src/chordLists/*.ts`.
   },
 ```
 
+### Rendering results
+
 ![Cm sample](https://user-images.githubusercontent.com/1241251/149176308-6dbc6ffa-df29-4720-9791-aa5c4e946115.png)
+
+
+## References
+
+- [ウクレレコード一覧表｜楽器.me](http://www.gakufu.gakki.me/code_u/)
+- [Ukulele Chords Diagrams & Ukulele Fretboard • UkuTabs](https://ukutabs.com/ukulele-chords-diagrams/)
+- [starenka/chordata: A dummy chordbook for mandolin, ukulele and guitar](https://github.com/starenka/chordata)
